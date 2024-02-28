@@ -128,6 +128,10 @@ define get-source-dir
 	fi)
 endef
 
+.PHONY: gcsfuse
+gcsfuse:
+	ARCH=$(ARCH) /bin/bash ./hack/gcsfuse.sh
+
 package/%:
 	$(eval yamlfile := $(shell find . -type f \( -name "$*.yaml" -o -path "*/$*/$*.melange.yaml" \) | head -n 1))
 	@if [ -z "$(yamlfile)" ]; then \
