@@ -98,6 +98,8 @@ jobs:
           set -x
           set -v
 
+          git --no-pager log --pretty=format="%ct" --name-only --no-merges
+
           COMMON_FLAGS=$(cat <<-END
             --keyring-append ./local-melange.rsa.pub \
             --keyring-append https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
