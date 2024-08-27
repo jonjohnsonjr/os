@@ -54,13 +54,6 @@ subpackages:
     pipeline:
       - uses: split/manpages
 
-  # Ref: https://github.com/docker-library/docker/blob/master/Dockerfile-cli.template
-  - name: docker-cli-compat
-    dependencies:
-      runtime:
-        - docker-oci-entrypoint
-        - docker-modprobe-compat
-
 update:
   enabled: true
   ignore-regex-patterns:
